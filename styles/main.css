@@ -1,0 +1,27 @@
+.game-box{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+.doll-box{
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.item-box{
+    position: relative;
+    width: 50%;
+    top: 200px;
+}
+
+.item-btn{
+    cursor: pointer;
+}
+
+.not-selected{
+    visibility: hidden;
+}
