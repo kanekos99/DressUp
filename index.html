@@ -13,24 +13,22 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <link rel="stylesheet" type="text/css" href="styles/layers.css" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="scripts/clothesDB.js"></script>
-    <script src="scripts/main.js"></script>
   </head>
   <body>
     <div class="game-box">
       <div class="doll-box" id="doll-box">
         <img src="assets/base.png" height="700" class="layer0" />
         <img
-          src="assets/under/leaf.png"
+          src="assets/under/plain.png"
           height="700"
           class="layer1"
-          id="leaf-under"
+          id="plain-under"
         />
         <img
           src="assets/hair/ponytail.png"
@@ -39,6 +37,44 @@
           id="ponytail"
         />
         <img src="assets/tail/tails3.png" height="700" class="layer-5" />
+        <img
+          src="assets/inner/plain_a.png"
+          height="700"
+          class="layer5"
+          id="plain-inner"
+        />
+        <img
+          src="assets/inner/plain_b.png"
+          height="700"
+          class="layer-1"
+          id="plain-inner-b"
+        />
+        <img
+          src="assets/outer/autumn.png"
+          height="700"
+          class="layer7"
+          id="autumn-outer"
+        />
+        <img
+          src="assets/pants/plain.png"
+          height="700"
+          class="layer2"
+          id="plain-pants"
+        />
+        <img
+          src="assets/shoes/advisor_boots.png"
+          height="700"
+          class="layer3"
+          id="advisor-boots"
+        />
+        <img
+          src="assets/belt/green_medal_belt.png"
+          height="700"
+          class="layer8"
+          id="green-medal-belt"
+        />
+        <img src="assets/cape/bottom_cape_a.png" height="700" class="layer6" id="bottom-cape"/>
+        <img src="assets/cape/bottom_cape_b.png" height="700" class="layer-3" id="bottom-cape-b"/>
       </div>
       <div class="item-box">
         <div class="d-flex align-items-start">
@@ -60,14 +96,14 @@
             </button>
             <button
               class="nav-link"
-              id="under-button"
+              id="inner-button"
               data-bs-toggle="pill"
-              data-bs-target="#under-tab"
-              data-category="under"
+              data-bs-target="#inner-tab"
+              data-category="inner"
               type="button"
               role="tab"
             >
-              Underwear
+              Tops (Inner)
             </button>
             <button
               class="nav-link"
@@ -80,6 +116,50 @@
             >
               Tops (Outer)
             </button>
+            <button
+              class="nav-link"
+              id="pants-button"
+              data-bs-toggle="pill"
+              data-bs-target="#pants-tab"
+              data-category="pants"
+              type="button"
+              role="tab"
+            >
+              Pants
+            </button>
+            <button
+              class="nav-link"
+              id="shoes-button"
+              data-bs-toggle="pill"
+              data-bs-target="#shoes-tab"
+              data-category="shoes"
+              type="button"
+              role="tab"
+            >
+              Shoes
+            </button>
+            <button
+              class="nav-link"
+              id="accessories-button"
+              data-bs-toggle="pill"
+              data-bs-target="#accessories-tab"
+              data-category="accessories"
+              type="button"
+              role="tab"
+            >
+              Accessories
+            </button>
+            <button
+              class="nav-link"
+              id="under-button"
+              data-bs-toggle="pill"
+              data-bs-target="#under-tab"
+              data-category="under"
+              type="button"
+              role="tab"
+            >
+              Underwear
+            </button>
           </div>
           <div class="tab-content" id="items-pages">
             <div
@@ -87,17 +167,124 @@
               id="hair-tab"
               role="tabpanel"
             ></div>
-            <div class="tab-pane fade" id="under-tab" role="tabpanel"></div>
-            <div class="tab-pane fade" id="outer-tab" role="tabpanel">
-              Outer tops here
+            <div class="tab-pane fade" id="inner-tab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="outer-tab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="pants-tab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="shoes-tab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="accessories-tab" role="tabpanel">
+              <div class="accordion accordion-flush">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#belts-panel"
+                    >
+                      Belts
+                    </button>
+                  </h2>
+                  <div
+                    id="belts-panel"
+                    class="accordion-collapse collapse show"
+                  >
+                    <div class="accordion-body" id="belts-panel-body"></div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#capes-panel"
+                    >
+                      Capes
+                    </button>
+                  </h2>
+                  <div
+                    id="capes-panel"
+                    class="accordion-collapse collapse show"
+                  >
+                    <div class="accordion-body" id="capes-panel-body"></div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#armour-panel"
+                    >
+                      Armour
+                    </button>
+                  </h2>
+                  <div
+                    id="armour-panel"
+                    class="accordion-collapse collapse show"
+                  >
+                    <div class="accordion-body" id="armour-panel-body"></div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#neck-panel"
+                    >
+                      Neck
+                    </button>
+                  </h2>
+                  <div id="neck-panel" class="accordion-collapse collapse show">
+                    <div class="accordion-body" id="neck-panel-body"></div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#weapons-panel"
+                    >
+                      Weapons
+                    </button>
+                  </h2>
+                  <div
+                    id="weapons-panel"
+                    class="accordion-collapse collapse show"
+                  >
+                    <div class="accordion-body" id="weapons-panel-body"></div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#others-panel"
+                      disabled
+                    >
+                      Others
+                    </button>
+                  </h2>
+                  <div id="others-panel" class="accordion-collapse collapse">
+                    <div class="accordion-body" id="others-panel-body"></div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="tab-pane fade" id="under-tab" role="tabpanel"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <script>
-      const dollBox = $("#doll-box");
-    </script>
+    <script src="scripts/clothesDB.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>

@@ -10,17 +10,21 @@
   width: 45%;
   display: flex;
   justify-content: center;
+  margin-left: 5%;
 }
 
 .item-box {
   position: relative;
-  width: 50%;
   top: 200px;
+  margin-right: 5%;
+  width: 45%;
 }
 
 #items-pages {
   overflow-y: auto;
   height: 400px;
+  width: 100%;
+  margin-right: 10%;
 }
 
 .item-btn {
@@ -38,4 +42,46 @@
 
 .not-selected {
   visibility: hidden;
+}
+
+.accordion-item {
+  width: 100%;
+}
+
+.accordion-button {
+  border-radius: 10px !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.accordion-body {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.tab-pane {
+  margin-right: 3%;
+}
+
+/*-------------------------Custom Scrollbar----------------------------*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

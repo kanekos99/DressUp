@@ -1,6 +1,12 @@
 const clothes = {
   hair: [
     {
+      id: "no-hair",
+      name: "Remove Hair",
+      category: "HAIR",
+      iconHtml: `<img src="assets/remove-icon.png" class="item-btn" onclick="removeExisting(this.dataset.category, this.dataset.subcategory, this.dataset.item);" data-item="no-hair" data-category="hair">`,
+    },
+    {
       id: "long-hair",
       name: "Long Hair",
       category: "HAIR",
@@ -43,16 +49,179 @@ const clothes = {
       dependent: [],
     },
   ],
+  inner: [
+    {
+      id: "no-inner",
+      name: "Remove Inner Top",
+      category: "INNER",
+      iconHtml: `<img src="assets/remove-icon.png" class="item-btn" onclick="removeExisting(this.dataset.category, this.dataset.subcategory, this.dataset.item);" data-item="no-inner" data-category="inner">`,
+    },
+    {
+      id: "plain-inner",
+      name: "Plain Inner Robe",
+      category: "INNER",
+      imgHtml: `<img src="assets/inner/plain_a.png" height="700" class="layer5" id="plain-inner"/>`,
+      iconHtml: `<img src="assets/inner/icons/plain_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="plain-inner" data-category="inner">`,
+      layer: 5,
+      related: [],
+      dependent: [],
+      linkedItems: [
+        {
+          id: "plain-inner-b",
+          imgHtml: `<img src="assets/inner/plain_b.png" height="700" class="layer-1" id="plain-inner-b"/>`,
+        },
+      ],
+    },
+  ],
+  outer: [
+    {
+      id: "no-outer",
+      name: "Remove Outer Top",
+      category: "OUTER",
+      iconHtml: `<img src="assets/remove-icon.png" class="item-btn" onclick="removeExisting(this.dataset.category, this.dataset.subcategory, this.dataset.item);" data-item="no-outer" data-category="outer">`,
+    },
+    {
+      id: "autumn-outer",
+      name: "Autumn Outer Robe",
+      category: "OUTER",
+      imgHtml: `<img src="assets/outer/autumn.png" height="700" class="layer7" id="autumn-outer"/>`,
+      iconHtml: `<img src="assets/outer/icons/autumn_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="autumn-outer" data-category="outer">`,
+      layer: 7,
+      related: [],
+      dependent: [],
+    },
+  ],
+  pants: [
+    {
+      id: "no-pants",
+      name: "Remove Pants",
+      category: "PANTS",
+      iconHtml: `<img src="assets/remove-icon.png" class="item-btn" onclick="removeExisting(this.dataset.category, this.dataset.subcategory, this.dataset.item);" data-item="no-pants" data-category="pants">`,
+    },
+    {
+      id: "plain-pants",
+      name: "Plain White Pants",
+      category: "PANTS",
+      imgHtml: `<img src="assets/pants/plain.png" height="700" class="layer2" id="plain-pants"/>`,
+      iconHtml: `<img src="assets/pants/icons/plain_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="plain-pants" data-category="pants">`,
+      layer: 2,
+      related: [],
+      dependent: [],
+    },
+  ],
+  shoes: [
+    {
+      id: "no-shoes",
+      name: "Remove Shoes",
+      category: "SHOES",
+      iconHtml: `<img src="assets/remove-icon.png" class="item-btn" onclick="removeExisting(this.dataset.category, this.dataset.subcategory, this.dataset.item);" data-item="no-shoes" data-category="shoes">`,
+    },
+    {
+      id: "advisor-boots",
+      name: "Advisor Boots",
+      category: "SHOES",
+      imgHtml: `<img src="assets/shoes/advisor_boots.png" height="700" class="layer3" id="advisor-boots"/>`,
+      iconHtml: `<img src="assets/shoes/icons/advisor_boots_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="advisor-boots" data-category="shoes">`,
+      layer: 3,
+      related: [],
+      dependent: [],
+    },
+  ],
+  accessories: {
+    belts: [
+      {
+        id: "green-medal-belt",
+        name: "Green Medal Belt",
+        category: "ACCESSORIES",
+        subcategory: "BELTS",
+        imgHtml: `<img src="assets/belt/green_medal_belt.png" height="700" class="layer10" id="green-medal-belt"/>`,
+        iconHtml: `<img src="assets/belt/icons/green_medal_belt_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="green-medal-belt" data-category="accessories" data-subcategory="belts">`,
+        layer: 8,
+        related: [],
+        dependent: [],
+      },
+    ],
+    capes: [
+      {
+        id: "fur-cape",
+        name: "Fur Cape",
+        category: "ACCESSORIES",
+        subcategory: "CAPES",
+        imgHtml: `<img src="assets/cape/fur_cape.png" height="700" class="layer8" id="fur-cape"/>`,
+        iconHtml: `<img src="assets/cape/icons/fur_cape_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="fur-cape" data-category="accessories" data-subcategory="capes">`,
+        layer: 9,
+        related: [],
+        dependent: [],
+      },
+      {
+        id: "bottom-cape",
+        name: "Bottom Cape",
+        category: "ACCESSORIES",
+        subcategory: "CAPES",
+        imgHtml: `<img src="assets/cape/bottom_cape_a.png" height="700" class="layer6" id="bottom-cape"/>`,
+        iconHtml: `<img src="assets/cape/icons/bottom_cape_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="bottom-cape" data-category="accessories" data-subcategory="capes">`,
+        layer: 6,
+        related: [],
+        dependent: [],
+        linkedItems: [
+          {
+            id: "bottom-cape-b",
+            imgHtml: `<img src="assets/cape/bottom_cape_b.png" height="700" class="layer-3" id="bottom-cape-b"/>`,
+          },
+        ],
+      },
+    ],
+    armour: [
+      {
+        id: "light-armour",
+        name: "Light Armour",
+        category: "ACCESSORIES",
+        subcategory: "ARMOUR",
+        imgHtml: `<img src="assets/armour/light.png" height="700" class="layer9" id="light-armour"/>`,
+        iconHtml: `<img src="assets/armour/icons/light_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="light-armour" data-category="accessories" data-subcategory="armour">`,
+        layer: 8,
+        related: [],
+        dependent: [],
+      },
+    ],
+    neck: [
+      {
+        id: "brown-collar",
+        name: "Brown Collar",
+        category: "ACCESSORIES",
+        subcategory: "NECK",
+        imgHtml: `<img src="assets/neck/collar.png" height="700" class="layer4" id="brown-collar"/>`,
+        iconHtml: `<img src="assets/neck/icons/collar_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="brown-collar" data-category="accessories" data-subcategory="neck">`,
+        layer: 8,
+        related: [],
+        dependent: [],
+      },
+    ],
+    weapons: [
+      {
+        id: "cinnabar-sword",
+        name: "Cinnabar Sword",
+        category: "ACCESSORIES",
+        subcategory: "WEAPONS",
+        imgHtml: `<img src="assets/weapon/sword.png" height="700" class="layer11" id="cinnabar-sword"/>`,
+        iconHtml: `<img src="assets/weapon/icons/sword_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="cinnabar-sword" data-category="accessories" data-subcategory="weapons">`,
+        layer: 8,
+        related: [],
+        dependent: [],
+      },
+    ],
+    others: [],
+  },
 };
 
 const multiAllowed = ["ACCESSORIES"];
 
 const selectedOutfit = {
   hair: "ponytail",
-  under: "leaf-under",
-  outer: "",
-  inner: "",
-  pants: "",
-  shoes: "",
-  accessories: [],
+  under: "plain-under",
+  outer: "autumn-outer",
+  inner: "plain-inner",
+  pants: "plain-pants",
+  shoes: "advisor-boots",
+  accessories: ["green-medal-belt", "bottom-cape"],
 };
