@@ -1,27 +1,41 @@
-.game-box{
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: left;
+.game-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: left;
 }
 
-.doll-box{
-    position: relative;
-    width: 50%;
-    display: flex;
-    justify-content: center;
+.doll-box {
+  position: relative;
+  width: 45%;
+  display: flex;
+  justify-content: center;
 }
 
-.item-box{
-    position: relative;
-    width: 50%;
-    top: 200px;
+.item-box {
+  position: relative;
+  width: 50%;
+  top: 200px;
 }
 
-.item-btn{
-    cursor: pointer;
+#items-pages {
+  overflow-y: auto;
+  height: 400px;
 }
 
-.not-selected{
-    visibility: hidden;
+.item-btn {
+  cursor: pointer;
+  border: 2px solid rgb(0 0 0 / 0.3);
+  border-radius: 25px;
+  margin: 5px 5px 5px 5px;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.5);
+}
+
+.item-btn:hover {
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}
+
+.not-selected {
+  visibility: hidden;
 }
