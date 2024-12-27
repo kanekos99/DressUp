@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OC Dress Up</title>
 
     <link
@@ -10,6 +10,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <link rel="stylesheet" type="text/css" href="styles/layers.css" />
 
@@ -23,66 +28,68 @@
   <body>
     <div class="game-box">
       <div class="doll-box" id="doll-box">
-        <img src="assets/base.png" height="700" class="layer0" />
+        <img src="assets/base.png" class="layer0 doll-layer" />
         <img
           src="assets/under/plain.png"
-          height="700"
-          class="layer1"
+          class="layer1 doll-layer"
           id="plain-under"
         />
         <img
           src="assets/hair/ponytail.png"
-          height="700"
-          class="layer-2"
+          class="layer-2 doll-layer"
           id="ponytail"
         />
-        <img src="assets/tail/tails3.png" height="700" class="layer-5" />
+        <img src="assets/tail/tails3.png" class="layer-5 doll-layer" />
         <img
           src="assets/inner/plain_a.png"
-          height="700"
-          class="layer5"
+          class="layer5 doll-layer"
           id="plain-inner"
         />
         <img
           src="assets/inner/plain_b.png"
-          height="700"
-          class="layer-1"
+          class="layer-1 doll-layer"
           id="plain-inner-b"
         />
         <img
           src="assets/outer/autumn.png"
-          height="700"
-          class="layer7"
+          class="layer7 doll-layer"
           id="autumn-outer"
         />
         <img
           src="assets/pants/plain.png"
-          height="700"
-          class="layer2"
+          class="layer2 doll-layer"
           id="plain-pants"
         />
         <img
           src="assets/shoes/advisor_boots.png"
-          height="700"
-          class="layer3"
+          class="layer3 doll-layer"
           id="advisor-boots"
         />
         <img
           src="assets/belt/green_medal_belt.png"
-          height="700"
-          class="layer8"
+          class="layer8 doll-layer"
           id="green-medal-belt"
         />
-        <img src="assets/cape/bottom_cape_a.png" height="700" class="layer6" id="bottom-cape"/>
-        <img src="assets/cape/bottom_cape_b.png" height="700" class="layer-3" id="bottom-cape-b"/>
+        <img
+          src="assets/cape/bottom_cape_a.png"
+          class="layer6 doll-layer"
+          id="bottom-cape"
+        />
+        <img
+          src="assets/cape/bottom_cape_b.png"
+          class="layer-3 doll-layer"
+          id="bottom-cape-b"
+        />
+        <img
+          src="assets/stand.png"
+          width="450"
+          class="doll-stand"
+          id="doll-stand"
+        />
       </div>
       <div class="item-box">
         <div class="d-flex align-items-start">
-          <div
-            class="nav flex-column nav-pills me-3"
-            id="items-tab"
-            role="tablist"
-          >
+          <div class="nav flex-column nav-pills" id="items-tab" role="tablist">
             <button
               class="nav-link active"
               id="hair-button"
@@ -92,10 +99,10 @@
               type="button"
               role="tab"
             >
-              Hair Styles
+              <img src="assets/menu-icons/hair.png" class="tab-icon" />
             </button>
             <button
-              class="nav-link"
+              class="nav-link nav-link-even"
               id="inner-button"
               data-bs-toggle="pill"
               data-bs-target="#inner-tab"
@@ -103,7 +110,7 @@
               type="button"
               role="tab"
             >
-              Tops (Inner)
+              <img src="assets/menu-icons/outer-top.png" class="tab-icon" />
             </button>
             <button
               class="nav-link"
@@ -114,10 +121,10 @@
               type="button"
               role="tab"
             >
-              Tops (Outer)
+              <img src="assets/menu-icons/inner-top.png" class="tab-icon" />
             </button>
             <button
-              class="nav-link"
+              class="nav-link nav-link-even"
               id="pants-button"
               data-bs-toggle="pill"
               data-bs-target="#pants-tab"
@@ -125,7 +132,7 @@
               type="button"
               role="tab"
             >
-              Pants
+              <img src="assets/menu-icons/pants.png" class="tab-icon" />
             </button>
             <button
               class="nav-link"
@@ -136,10 +143,10 @@
               type="button"
               role="tab"
             >
-              Shoes
+              <img src="assets/menu-icons/shoes.png" class="tab-icon" />
             </button>
             <button
-              class="nav-link"
+              class="nav-link nav-link-even"
               id="accessories-button"
               data-bs-toggle="pill"
               data-bs-target="#accessories-tab"
@@ -147,7 +154,7 @@
               type="button"
               role="tab"
             >
-              Accessories
+              <img src="assets/menu-icons/accessories.png" class="tab-icon" />
             </button>
             <button
               class="nav-link"
@@ -158,10 +165,21 @@
               type="button"
               role="tab"
             >
-              Underwear
+              <img src="assets/menu-icons/underwear.png" class="tab-icon" />
+            </button>
+            <button
+              class="nav-link nav-link-even"
+              id="others-button"
+              data-bs-toggle="pill"
+              data-bs-target="#others-tab"
+              data-category="others"
+              type="button"
+              role="tab"
+            >
+              <img src="assets/menu-icons/others.png" class="tab-icon" />
             </button>
           </div>
-          <div class="tab-content" id="items-pages">
+          <div class="tab-content p-3" id="items-pages">
             <div
               class="tab-pane fade show active"
               id="hair-tab"
@@ -279,6 +297,9 @@
               </div>
             </div>
             <div class="tab-pane fade" id="under-tab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="others-tab" role="tabpanel">
+              Other settings
+            </div>
           </div>
         </div>
       </div>
