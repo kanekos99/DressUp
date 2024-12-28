@@ -29,7 +29,7 @@
   <body>
     <div class="game-box">
       <div class="doll-box" id="doll-box">
-        <img src="assets/base.png" class="layer0 doll-layer" />
+        <img src="assets/base.png" class="layer0 doll-layer" id="base-doll"/>
         <img
           src="assets/under/plain.png"
           class="layer1 doll-layer"
@@ -208,8 +208,18 @@
               role="tabpanel"
             >
               <div class="tab-header">Outfits</div>
-              <img src="assets/outfits/naked-outfit-2.png" class="outfit-btn" onclick="ChangeOutfit(this);" data-item="noOutfit"/>
-              <img src="assets/outfits/advisor-outfit.png" class="outfit-btn" onclick="ChangeOutfit(this);" data-item="advisorOutfit"/>
+              <img
+                src="assets/outfits/naked-outfit-2.png"
+                class="outfit-btn"
+                onclick="ChangeOutfit(this);"
+                data-item="noOutfit"
+              />
+              <img
+                src="assets/outfits/advisor-outfit.png"
+                class="outfit-btn"
+                onclick="ChangeOutfit(this);"
+                data-item="advisorOutfit"
+              />
             </div>
             <div class="tab-pane fade" id="hair-tab" role="tabpanel">
               <div class="tab-header">Hair Styles</div>
@@ -338,7 +348,119 @@
             </div>
             <div class="tab-pane fade" id="others-tab" role="tabpanel">
               <div class="tab-header">Other settings</div>
+              <div class="setting-row mb-1">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="audio-checkbox"
+                  onclick="muteAudio(this);"
+                />
+                <label class="form-check-label" for="audio-checkbox">
+                  Mute Sounds
+                </label>
+              </div>
+              <div class="setting-row mb-1">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="bgm-checkbox"
+                  onclick="playBGM(this);"
+                />
+                <label class="form-check-label" for="bgm-checkbox">
+                  Play BGM
+                </label>
+              </div>
+              <div class="setting-row mb-1">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="makeup-checkbox"
+                  onclick="showMakeUp(this.checked);"
+                  checked
+                />
+                <label class="form-check-label" for="makeup-checkbox">
+                  Show Make-Up
+                </label>
+              </div>
+              <div class="setting-row mb-1">
+                <div>Show Tails (Coming soon):</div>
+                <div class="tail-btn-row">
+                  <button
+                    type="button"
+                    class="btn btn-primary tail-button"
+                    disabled
+                  >
+                    1 Tail
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary tail-button"
+                    disabled
+                  >
+                    3 Tails
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary tail-button"
+                    disabled
+                  >
+                    9 Tails
+                  </button>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="about-game-button"
+                data-bs-toggle="modal"
+                data-bs-target="#aboutGameModal"
+              >
+                About Game
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="aboutGameModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="modal-title mt-2">About Game</div>
+            <div class="about-game-body">
+              This is a silly little dress up game featuring my original
+              character, Qiu Ye, who is a nine-tailed fox spirit. It is mostly meant to showcase his various
+              outfits. 
+              <br>
+              <br>
+              This game is (badly) coded in plain HTML/ CSS/ JavaScript and not very well-optimized for
+              mobile. I may update it with more outfits/ features in the future depending on my mood. In the
+              meantime, thanks for playing!
+              <br />
+              <br />
+              For more of my works, you can find me on Instagram at
+              <b><a href="https://www.instagram.com/kanekos99/">kanekos99</a></b>!
+            </div>
+            <div class="modal-title credits-title mt-3">Credits</div>
+            <div class="credits-body">
+              <ul>
+                <li>Background graphics are made by me in Canva and character/ outfits are drawn by me</li>
+                <li>Game icons are from <a href="https://www.flaticon.com/">flaticon.com</a> and <a href="https://www.iconfinder.com/">iconfinder.com</a></li>
+                <li>Sound effects are from RPGMaker MV and BGM is from <a href="https://www.youtube.com/watch?v=aO3YvO8bvjk">here</a></li>
+              </ul>  
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary close-modal-btn"
+              data-bs-dismiss="modal"
+            >
+              Back to Game
+            </button>
           </div>
         </div>
       </div>
@@ -347,6 +469,7 @@
     <audio id="equip-audio" src="assets/audio/Equip2.ogg"></audio>
     <audio id="tab-switch-audio" src="assets/audio/Cursor2.ogg"></audio>
     <audio id="deny-audio" src="assets/audio/Buzzer1.ogg"></audio>
+    <audio id="bg-music" loop src="assets/audio/chun_ting_xue.mp3"></audio>
 
     <script src="scripts/clothesDB.js"></script>
     <script src="scripts/main.js"></script>

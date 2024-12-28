@@ -196,12 +196,14 @@ let selectedOutfit = {
   accessories: ["green-medal-belt", "bottom-cape"],
 };
 
+let isMakeUpShowing = true;
+
 /*----------------------------Outfits----------------------------------*/
 
 const outfits = {
   noOutfit: {
     outfitHTML: `
-    <img src="assets/base.png" class="layer0 doll-layer">
+    <img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
     <img src="assets/tail/tails3.png" class="layer-5 doll-layer">
     <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
     <img src="assets/hair/long.png" class="layer-6 doll-layer" id="long-hair">
@@ -218,7 +220,7 @@ const outfits = {
     },
   },
   advisorOutfit: {
-    outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer">
+    outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
     <img src="assets/tail/tails3.png" class="layer-5 doll-layer">
     <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
     <img src="assets/under/leaf.png" class="layer1 doll-layer" id="leaf-under">

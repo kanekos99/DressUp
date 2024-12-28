@@ -50,7 +50,7 @@ function toggleItem(selectedItem) {
       item.classList.remove("selected-item");
     });
 
-    if(selectedOutfit[itemCategory] == itemId && itemCategory == "under") {
+    if (selectedOutfit[itemCategory] == itemId && itemCategory == "under") {
       playDenyAudio();
     } else {
       playEquipAudio();
@@ -165,6 +165,8 @@ function ChangeOutfit(newOutfit) {
     const selectedItemBtn = document.querySelectorAll(itemBtnSelector)[0];
     selectedItemBtn.classList.add("selected-item");
   });
+
+  showMakeUp(isMakeUpShowing)
 }
 
 function getOutfitItemList(newOutfit) {
@@ -195,23 +197,61 @@ function getOutfitItemList(newOutfit) {
   return outfitItemList;
 }
 
+function showMakeUp(checked) {
+  if (checked) {
+    console.log("make up is showing");
+    isMakeUpShowing = true;
+    $("#base-doll").attr("src", "assets/base.png");
+  } else {
+    console.log("make up is not showing");
+    isMakeUpShowing = false;
+    $("#base-doll").attr("src", "assets/base_no_makeup.png");
+  }
+}
+
+/*------------------audio related----------------------*/
+
+const equipAudio = document.getElementById("equip-audio");
+const denyAudio = document.getElementById("deny-audio");
+const tabSwitchAudio = document.getElementById("tab-switch-audio");
+const bgmAudio = document.getElementById("bg-music");
+
 function playEquipAudio() {
   //play sound effect
-  const equipAudio = document.getElementById("equip-audio");
   equipAudio.volume = 0.5;
   equipAudio.play();
 }
 
 function playDenyAudio() {
   //play sound effect
-  const denyAudio = document.getElementById("deny-audio");
   denyAudio.volume = 0.5;
   denyAudio.play();
 }
 
 function SwitchTabAudio() {
   //play sound effect
-  const tabSwitchAudio = document.getElementById("tab-switch-audio");
   tabSwitchAudio.volume = 0.5;
   tabSwitchAudio.play();
+}
+
+function muteAudio(checkbox) {
+  if (checkbox.checked) {
+    equipAudio.muted = true;
+    denyAudio.muted = true;
+    tabSwitchAudio.muted = true;
+    bgmAudio.muted = true;
+  } else {
+    equipAudio.muted = false;
+    denyAudio.muted = false;
+    tabSwitchAudio.muted = false;
+    bgmAudio.muted = false;
+  }
+}
+
+function playBGM(checkbox) {
+  if (checkbox.checked) {
+    bgmAudio.play();
+  } else {
+    bgmAudio.pause();
+  }
 }
