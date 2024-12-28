@@ -106,6 +106,7 @@ function addLinkedItems(item) {
 
 function removeExisting(category, subcategory, itemId) {
   if (selectedOutfit[category]) {
+
     const existingItemName = "#" + selectedOutfit[category];
     $(existingItemName).remove();
 
@@ -145,7 +146,7 @@ function ChangeOutfit(newOutfit) {
 
   const outfitId = newOutfit.dataset.item;
   dollBox[0].innerHTML = outfits[outfitId].outfitHTML;
-  selectedOutfit = outfits[outfitId].outfitObj;
+  selectedOutfit = {...outfits[outfitId].outfitObj}
 
   const outfitItemList = getOutfitItemList(newOutfit);
 
@@ -203,5 +204,4 @@ function SwitchTabAudio() {
   const tabSwitchAudio = document.getElementById("tab-switch-audio");
   tabSwitchAudio.volume = 0.5;
   tabSwitchAudio.play();
-  console.log("clicked thing")
 }
