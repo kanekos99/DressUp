@@ -41,20 +41,37 @@ function toggleItem(selectedItem) {
   const itemId = selectedItem.dataset.item;
   const itemSubCategory = selectedItem.dataset.subcategory;
 
+  playEquipAudio();
+
   //remove existing outfit - except for accessories
   if (itemCategory != "accessories") {
-    removeExisting(itemCategory, itemSubCategory, itemId);
-    const items = clothes[itemCategory];
-    items.filter((item) => {
-      if (item.id == itemId) {
-        dollBox.append(item.imgHtml);
-        selectedOutfit[itemCategory] = itemId;
-
-        //add linked items
-        addLinkedItems(item);
-      }
+    //toggle button
+    const CategoryBtnSelector = "[data-category='" + itemCategory + "']";
+    const allCategoryItems = document.querySelectorAll(CategoryBtnSelector);
+    allCategoryItems.forEach((item) => {
+      item.classList.remove("selected-item");
     });
+
+    if (selectedOutfit[itemCategory] == itemId) {
+      removeExisting(itemCategory, itemSubCategory, itemId);
+    } else {
+      selectedItem.classList.toggle("selected-item");
+      removeExisting(itemCategory, itemSubCategory, itemId);
+      const items = clothes[itemCategory];
+      items.filter((item) => {
+        if (item.id == itemId) {
+          dollBox.append(item.imgHtml);
+          selectedOutfit[itemCategory] = itemId;
+
+          //add linked items
+          addLinkedItems(item);
+        }
+      });
+    }
   } else {
+    //toggle button
+    selectedItem.classList.toggle("selected-item");
+
     //check if accessory is currently being worn
     if (selectedOutfit.accessories.includes(itemId)) {
       const accessoryName = "#" + itemId;
@@ -63,7 +80,7 @@ function toggleItem(selectedItem) {
       selectedOutfit.accessories.splice(accessoryIndex, 1);
 
       //remove linked accessories
-      removeLinkedItems(itemCategory, itemSubCategory, itemId)
+      removeLinkedItems(itemCategory, itemSubCategory, itemId);
     } else {
       const items = clothes.accessories[itemSubCategory];
       items.filter((item) => {
@@ -121,4 +138,70 @@ function removeLinkedItems(category, subcategory, itemId) {
       $(linkedItemName).remove();
     });
   }
+}
+
+function ChangeOutfit(newOutfit) {
+  playEquipAudio();
+
+  const outfitId = newOutfit.dataset.item;
+  dollBox[0].innerHTML = outfits[outfitId].outfitHTML;
+  selectedOutfit = outfits[outfitId].outfitObj;
+
+  const outfitItemList = getOutfitItemList(newOutfit);
+
+  //deselect all items
+  const allItemButtons = document.querySelectorAll(".item-btn");
+  allItemButtons.forEach((button) => {
+    button.classList.remove("selected-item");
+  });
+
+  //select items in outfit item list
+  outfitItemList.forEach((itemName) => {
+    const itemBtnSelector = "[data-item='" + itemName + "']";
+    const selectedItemBtn = document.querySelectorAll(itemBtnSelector)[0];
+    selectedItemBtn.classList.add("selected-item");
+  });
+}
+
+function getOutfitItemList(newOutfit) {
+  let outfitItemList = [];
+  const outfitId = newOutfit.dataset.item;
+
+  const oufitItemListUnfiltered = [
+    outfits[outfitId].outfitObj.hair,
+    outfits[outfitId].outfitObj.under,
+    outfits[outfitId].outfitObj.outer,
+    outfits[outfitId].outfitObj.inner,
+    outfits[outfitId].outfitObj.pants,
+    outfits[outfitId].outfitObj.shoes,
+  ];
+
+  oufitItemListUnfiltered.forEach((item) => {
+    if (item != "") {
+      outfitItemList.push(item);
+    }
+  });
+
+  if (outfits[outfitId].outfitObj.accessories.length > 0) {
+    outfitItemList = outfitItemList.concat(
+      outfits[outfitId].outfitObj.accessories
+    );
+  }
+
+  return outfitItemList;
+}
+
+function playEquipAudio() {
+  //play sound effect
+  const equipAudio = document.getElementById("equip-audio");
+  equipAudio.volume = 0.5;
+  equipAudio.play();
+}
+
+function SwitchTabAudio() {
+  //play sound effect
+  const tabSwitchAudio = document.getElementById("tab-switch-audio");
+  tabSwitchAudio.volume = 0.5;
+  tabSwitchAudio.play();
+  console.log("clicked thing")
 }
