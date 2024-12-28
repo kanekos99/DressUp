@@ -41,8 +41,6 @@ function toggleItem(selectedItem) {
   const itemId = selectedItem.dataset.item;
   const itemSubCategory = selectedItem.dataset.subcategory;
 
-  playEquipAudio();
-
   //remove existing outfit - except for accessories
   if (itemCategory != "accessories") {
     //toggle button
@@ -52,7 +50,13 @@ function toggleItem(selectedItem) {
       item.classList.remove("selected-item");
     });
 
-    if (selectedOutfit[itemCategory] == itemId) {
+    if(selectedOutfit[itemCategory] == itemId && itemCategory == "under") {
+      playDenyAudio();
+    } else {
+      playEquipAudio();
+    }
+
+    if (selectedOutfit[itemCategory] == itemId && itemCategory != "under") {
       removeExisting(itemCategory, itemSubCategory, itemId);
     } else {
       selectedItem.classList.toggle("selected-item");
@@ -106,7 +110,6 @@ function addLinkedItems(item) {
 
 function removeExisting(category, subcategory, itemId) {
   if (selectedOutfit[category]) {
-
     const existingItemName = "#" + selectedOutfit[category];
     $(existingItemName).remove();
 
@@ -146,7 +149,7 @@ function ChangeOutfit(newOutfit) {
 
   const outfitId = newOutfit.dataset.item;
   dollBox[0].innerHTML = outfits[outfitId].outfitHTML;
-  selectedOutfit = {...outfits[outfitId].outfitObj}
+  selectedOutfit = { ...outfits[outfitId].outfitObj };
 
   const outfitItemList = getOutfitItemList(newOutfit);
 
@@ -197,6 +200,13 @@ function playEquipAudio() {
   const equipAudio = document.getElementById("equip-audio");
   equipAudio.volume = 0.5;
   equipAudio.play();
+}
+
+function playDenyAudio() {
+  //play sound effect
+  const denyAudio = document.getElementById("deny-audio");
+  denyAudio.volume = 0.5;
+  denyAudio.play();
 }
 
 function SwitchTabAudio() {
