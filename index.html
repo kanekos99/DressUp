@@ -89,7 +89,8 @@
         />
       </div>
       <div class="item-box">
-        <div class="d-flex align-items-start">
+        <div class="game-title">Qiu Ye Dress Up</div>
+        <div class="d-flex align-items-start item-box-inner">
           <div class="nav flex-column nav-pills" id="items-tab" role="tablist">
             <button
               class="nav-link active"
@@ -206,14 +207,25 @@
               id="outfit-tab"
               role="tabpanel"
             >
+              <div class="tab-header">Outfits</div>
               <img src="assets/outfits/naked-outfit-2.png" class="outfit-btn" onclick="ChangeOutfit(this);" data-item="noOutfit"/>
               <img src="assets/outfits/advisor-outfit.png" class="outfit-btn" onclick="ChangeOutfit(this);" data-item="advisorOutfit"/>
             </div>
-            <div class="tab-pane fade" id="hair-tab" role="tabpanel"></div>
-            <div class="tab-pane fade" id="inner-tab" role="tabpanel"></div>
-            <div class="tab-pane fade" id="outer-tab" role="tabpanel"></div>
-            <div class="tab-pane fade" id="pants-tab" role="tabpanel"></div>
-            <div class="tab-pane fade" id="shoes-tab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="hair-tab" role="tabpanel">
+              <div class="tab-header">Hair Styles</div>
+            </div>
+            <div class="tab-pane fade" id="inner-tab" role="tabpanel">
+              <div class="tab-header">Tops (Inner)</div>
+            </div>
+            <div class="tab-pane fade" id="outer-tab" role="tabpanel">
+              <div class="tab-header">Tops (Outer)</div>
+            </div>
+            <div class="tab-pane fade" id="pants-tab" role="tabpanel">
+              <div class="tab-header">Pants</div>
+            </div>
+            <div class="tab-pane fade" id="shoes-tab" role="tabpanel">
+              <div class="tab-header">Shoes</div>
+            </div>
             <div class="tab-pane fade" id="accessories-tab" role="tabpanel">
               <div class="accordion accordion-flush">
                 <div class="accordion-item">
@@ -321,9 +333,11 @@
                 </div> -->
               </div>
             </div>
-            <div class="tab-pane fade" id="under-tab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="under-tab" role="tabpanel">
+              <div class="tab-header">Underwear</div>
+            </div>
             <div class="tab-pane fade" id="others-tab" role="tabpanel">
-              Other settings
+              <div class="tab-header">Other settings</div>
             </div>
           </div>
         </div>

@@ -36,10 +36,22 @@ body {
 
 .item-box {
   position: relative;
-  top: 120px;
+  top: 80px;
   margin-right: 19%;
   /* width: 31%; */
+}
+
+.item-box-inner { 
   border-top: 20px solid #5b352b;
+}
+
+.game-title {
+  color: white;
+  font-family: ZCoolQingKe;
+  font-size: 30px;
+  text-align: right;
+  margin-right: 10px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.473);
 }
 
 #items-pages {
@@ -144,6 +156,17 @@ body {
 
 .tab-icon {
   width: 35px;
+}
+
+.tab-header {
+  background-color: #ac7e59;
+  color: white;
+  font-family: ZCoolQingKe;
+  font-size: 20px;
+  border-radius: 15px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+
 }
 
 /*--------------BG STUFF---------------*/
