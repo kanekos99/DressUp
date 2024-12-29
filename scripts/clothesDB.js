@@ -72,6 +72,16 @@ const clothes = {
       related: [],
       dependent: [],
     },
+    {
+      id: "autumn-casual-outer",
+      name: "Autumn Outer Robe (Casual)",
+      category: "OUTER",
+      imgHtml: `<img src="assets/outer/autumn_casual.png" class="layer7 doll-layer" id="autumn-casual-outer"/>`,
+      iconHtml: `<img src="assets/outer/icons/autumn_casual_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="autumn-casual-outer" data-category="outer">`,
+      layer: 7,
+      related: [],
+      dependent: [],
+    },
   ],
   pants: [
     {
@@ -106,6 +116,17 @@ const clothes = {
         subcategory: "BELTS",
         imgHtml: `<img src="assets/belt/green_medal_belt.png" class="layer10 doll-layer" id="green-medal-belt"/>`,
         iconHtml: `<img src="assets/belt/icons/green_medal_belt_icon.png" class="item-btn selected-item" onclick="toggleItem(this);" data-item="green-medal-belt" data-category="accessories" data-subcategory="belts">`,
+        layer: 8,
+        related: [],
+        dependent: [],
+      },
+      {
+        id: "green-bow-belt",
+        name: "Green Bow Belt",
+        category: "ACCESSORIES",
+        subcategory: "BELTS",
+        imgHtml: `<img src="assets/belt/green_bow_belt.png" class="layer10 doll-layer" id="green-bow-belt"/>`,
+        iconHtml: `<img src="assets/belt/icons/green_bow_belt_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="green-bow-belt" data-category="accessories" data-subcategory="belts">`,
         layer: 8,
         related: [],
         dependent: [],
@@ -244,8 +265,41 @@ const outfits = {
       inner: "plain-inner",
       pants: "plain-pants",
       shoes: "advisor-boots",
-      accessories: ["green-medal-belt", "bottom-cape", "cinnabar-sword", "brown-collar", "fur-cape", "light-armour" ],
+      accessories: [
+        "green-medal-belt",
+        "bottom-cape",
+        "cinnabar-sword",
+        "brown-collar",
+        "fur-cape",
+        "light-armour",
+      ],
+    },
+  },
+  casualOutfit: {
+    outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
+    <img src="assets/under/plain.png" class="layer1 doll-layer" id="plain-under">
+    <img src="assets/hair/ponytail.png" class="layer-2 doll-layer" id="ponytail">
+    <img src="assets/tail/tails3.png" class="layer-5 doll-layer">
+    <img src="assets/inner/plain_a.png" class="layer5 doll-layer" id="plain-inner">
+    <img src="assets/inner/plain_b.png" class="layer-1 doll-layer" id="plain-inner-b">
+    <img src="assets/pants/plain.png" class="layer2 doll-layer" id="plain-pants">
+    <img src="assets/shoes/advisor_boots.png" class="layer3 doll-layer" id="advisor-boots">  
+    <img src="assets/cape/bottom_cape_a.png" class="layer6 doll-layer" id="bottom-cape">
+    <img src="assets/cape/bottom_cape_b.png" class="layer-3 doll-layer" id="bottom-cape-b">
+    <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
+    <img src="assets/belt/green_bow_belt.png" class="layer10 doll-layer" id="green-bow-belt">
+    <img src="assets/outer/autumn_casual.png" class="layer7 doll-layer" id="autumn-casual-outer">`,
+    outfitObj: {
+      hair: "ponytail",
+      under: "plain-under",
+      outer: "autumn-casual-outer",
+      inner: "plain-inner",
+      pants: "plain-pants",
+      shoes: "advisor-boots",
+      accessories: [
+        "green-bow-belt",
+        "bottom-cape",
+      ],
     },
   },
 };
-

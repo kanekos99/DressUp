@@ -76,6 +76,9 @@ function toggleItem(selectedItem) {
     //toggle button
     selectedItem.classList.toggle("selected-item");
 
+    //play audio
+    playEquipAudio();
+
     //check if accessory is currently being worn
     if (selectedOutfit.accessories.includes(itemId)) {
       const accessoryName = "#" + itemId;

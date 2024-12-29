@@ -29,7 +29,7 @@
   <body>
     <div class="game-box">
       <div class="doll-box" id="doll-box">
-        <img src="assets/base.png" class="layer0 doll-layer" id="base-doll"/>
+        <img src="assets/base.png" class="layer0 doll-layer" id="base-doll" />
         <img
           src="assets/under/plain.png"
           class="layer1 doll-layer"
@@ -219,6 +219,12 @@
                 class="outfit-btn"
                 onclick="ChangeOutfit(this);"
                 data-item="advisorOutfit"
+              />
+              <img
+                src="assets/outfits/casual-outfit.png"
+                class="outfit-btn"
+                onclick="ChangeOutfit(this);"
+                data-item="casualOutfit"
               />
             </div>
             <div class="tab-pane fade" id="hair-tab" role="tabpanel">
@@ -433,25 +439,38 @@
             <div class="modal-title mt-2">About Game</div>
             <div class="about-game-body">
               This is a silly little dress up game featuring my original
-              character, Qiu Ye, who is a nine-tailed fox spirit. It is mostly meant to showcase his various
-              outfits. 
-              <br>
-              <br>
-              This game is (badly) coded in plain HTML/ CSS/ JavaScript and not very well-optimized for
-              mobile. I may update it with more outfits/ features in the future depending on my mood. In the
-              meantime, thanks for playing!
+              character, Qiu Ye, who is a nine-tailed fox spirit. It is mostly
+              meant to showcase his various outfits.
+              <br />
+              <br />
+              This game is (badly) coded in plain HTML/ CSS/ JavaScript (with
+              some Bootstrap and JQuery) and not very well-optimized for mobile.
+              I may update it with more outfits/ features in the future
+              depending on my mood. In the meantime, thanks for playing!
               <br />
               <br />
               For more of my works, you can find me on Instagram at
-              <b><a href="https://www.instagram.com/kanekos99/">kanekos99</a></b>!
+              <b><a href="https://www.instagram.com/kanekos99/">kanekos99</a></b
+              >!
             </div>
             <div class="modal-title credits-title mt-3">Credits</div>
             <div class="credits-body">
               <ul>
-                <li>Background graphics are made by me in Canva and character/ outfits are drawn by me</li>
-                <li>Game icons are from <a href="https://www.flaticon.com/">flaticon.com</a> and <a href="https://www.iconfinder.com/">iconfinder.com</a></li>
-                <li>Sound effects are from RPGMaker MV and BGM is from <a href="https://www.youtube.com/watch?v=aO3YvO8bvjk">here</a></li>
-              </ul>  
+                <li>
+                  Background graphics are made by me in Canva and character/
+                  outfits are drawn by me
+                </li>
+                <li>
+                  Game icons are from
+                  <a href="https://www.flaticon.com/">flaticon.com</a> and
+                  <a href="https://www.iconfinder.com/">iconfinder.com</a>
+                </li>
+                <li>
+                  Sound effects are from RPGMaker MV and BGM is from
+                  <a href="https://www.youtube.com/watch?v=aO3YvO8bvjk">here</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="modal-footer">
             <button
