@@ -126,7 +126,7 @@
               role="tab"
               onclick="SwitchTabAudio();"
             >
-              <img src="assets/menu-icons/outer-top.png" class="tab-icon" />
+              <img src="assets/menu-icons/inner-top.png" class="tab-icon" />
             </button>
             <button
               class="nav-link"
@@ -138,7 +138,7 @@
               role="tab"
               onclick="SwitchTabAudio();"
             >
-              <img src="assets/menu-icons/inner-top.png" class="tab-icon" />
+              <img src="assets/menu-icons/outer-top.png" class="tab-icon" />
             </button>
             <button
               class="nav-link nav-link-even"
@@ -225,6 +225,18 @@
                 class="outfit-btn"
                 onclick="ChangeOutfit(this);"
                 data-item="casualOutfit"
+              />
+              <img
+                src="assets/outfits/dancer-outfit.png"
+                class="outfit-btn"
+                onclick="ChangeOutfit(this);"
+                data-item="dancerOutfit"
+              />
+              <img
+                src="assets/outfits/secretary-outfit.png"
+                class="outfit-btn"
+                onclick="ChangeOutfit(this);"
+                data-item="secretaryOutfit"
               />
             </div>
             <div class="tab-pane fade" id="hair-tab" role="tabpanel">
@@ -331,22 +343,21 @@
                     <div class="accordion-body" id="weapons-panel-body"></div>
                   </div>
                 </div>
-                <!-- <div class="accordion-item">
+                <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button
-                      class="accordion-button collapsed"
+                      class="accordion-button"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#others-panel"
-                      disabled
+                      data-bs-target="#head-panel"
                     >
-                      Others
+                      Head
                     </button>
                   </h2>
-                  <div id="others-panel" class="accordion-collapse collapse">
-                    <div class="accordion-body" id="others-panel-body"></div>
+                  <div id="head-panel" class="accordion-collapse collapse show">
+                    <div class="accordion-body" id="head-panel-body"></div>
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
             <div class="tab-pane fade" id="under-tab" role="tabpanel">
@@ -485,9 +496,9 @@
       </div>
     </div>
 
-    <audio id="equip-audio" src="assets/audio/Equip2.ogg"></audio>
-    <audio id="tab-switch-audio" src="assets/audio/Cursor2.ogg"></audio>
-    <audio id="deny-audio" src="assets/audio/Buzzer1.ogg"></audio>
+    <audio id="equip-audio" src="assets/audio/Equip2.mp3"></audio>
+    <audio id="tab-switch-audio" src="assets/audio/Cursor2.mp3"></audio>
+    <audio id="deny-audio" src="assets/audio/Buzzer1.mp3"></audio>
     <audio id="bg-music" loop src="assets/audio/chun_ting_xue.mp3"></audio>
 
     <script src="scripts/clothesDB.js"></script>

@@ -13,6 +13,7 @@ const app = {
     loadAccessoryIcons("armour");
     loadAccessoryIcons("neck");
     loadAccessoryIcons("weapons");
+    loadAccessoryIcons("head");
   },
 };
 
