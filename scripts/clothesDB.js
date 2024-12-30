@@ -495,7 +495,9 @@ const outfits = {
     <img src="assets/shoes/dress-shoes.png" class="layer2 doll-layer" id="dress-shoes">
     <img src="assets/inner/secretary-shirt.png" class="layer5 doll-layer" id="secretary-shirt">
     <img src="assets/head/simple-clip.png" class="layer9 doll-layer" id="simple-clip">
-    <img src="assets/neck/secretary-ribbon.png" class="layer10 doll-layer" id="secretary-ribbon">`,
+    <img src="assets/neck/secretary-ribbon.png" class="layer10 doll-layer" id="secretary-ribbon">
+    <img src="assets/belt/leather-belt.png" class="layer10 doll-layer" id="leather-belt">
+    `,
     outfitObj: {
       hair: "short-ponytail",
       under: "plain-under",
@@ -503,7 +505,7 @@ const outfits = {
       inner: "secretary-shirt",
       pants: "dress-pants",
       shoes: "dress-shoes",
-      accessories: ["simple-clip", "secretary-ribbon"],
+      accessories: ["simple-clip", "secretary-ribbon", "leather-belt"],
     },
   },
   dancerOutfit: {
@@ -530,7 +532,14 @@ const outfits = {
       inner: "dancer-inner",
       pants: "black-shorts",
       shoes: "leg-ribbon",
-      accessories: ["dancer-cape", "chrys-ribbon", "dancer-belt", "brown-collar", "neck-tassel", "flower-clip"],
+      accessories: [
+        "dancer-cape",
+        "chrys-ribbon",
+        "dancer-belt",
+        "brown-collar",
+        "neck-tassel",
+        "flower-clip",
+      ],
     },
   },
 };
