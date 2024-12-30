@@ -645,7 +645,7 @@ const outfits = {
       inner: "consort-inner",
       pants: "",
       shoes: "sandals",
-      accessories: ["consort-cape", "straw-hat"],
+      accessories: ["consort-cape", "straw-hat", "gold-bow-belt"],
     },
   },
 };
