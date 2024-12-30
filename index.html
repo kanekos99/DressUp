@@ -40,7 +40,7 @@
           class="layer-2 doll-layer"
           id="ponytail"
         />
-        <img src="assets/tail/tails3.png" class="layer-5 doll-layer" />
+        <img src="assets/tail/tails3.png" class="layer-5 doll-layer" id="doll-tails"/>
         <img
           src="assets/inner/plain_a.png"
           class="layer5 doll-layer"
@@ -403,26 +403,29 @@
                 </label>
               </div>
               <div class="setting-row mb-1">
-                <div>Show Tails (Coming soon):</div>
+                <div>Show Tails</div>
                 <div class="tail-btn-row">
                   <button
                     type="button"
                     class="btn btn-primary tail-button"
-                    disabled
+                    data-item="tails1"
+                    onclick="setTails(this.getAttribute('data-item'));"
                   >
                     1 Tail
                   </button>
                   <button
                     type="button"
                     class="btn btn-primary tail-button"
-                    disabled
+                    data-item="tails3"
+                    onclick="setTails(this.getAttribute('data-item'));"
                   >
                     3 Tails
                   </button>
                   <button
                     type="button"
                     class="btn btn-primary tail-button"
-                    disabled
+                    data-item="tails9"
+                    onclick="setTails(this.getAttribute('data-item'));"
                   >
                     9 Tails
                   </button>

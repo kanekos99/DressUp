@@ -170,7 +170,7 @@ function ChangeOutfit(newOutfit) {
     selectedItemBtn.classList.add("selected-item");
   });
 
-  showMakeUp(isMakeUpShowing)
+  showMakeUp(isMakeUpShowing);
 }
 
 function getOutfitItemList(newOutfit) {
@@ -203,7 +203,6 @@ function getOutfitItemList(newOutfit) {
 
 function showMakeUp(checked) {
   if (checked) {
-    console.log("make up is showing");
     isMakeUpShowing = true;
     $("#base-doll").attr("src", "assets/base.png");
   } else {
@@ -257,5 +256,29 @@ function playBGM(checkbox) {
     bgmAudio.play();
   } else {
     bgmAudio.pause();
+  }
+}
+
+function setTails(selectedTailType) {
+  console.log(selectedTailType)
+  switch (selectedTailType) {
+    case "tails3":
+      console.log("3 tails are selected")
+      $("#doll-tails").attr("src", "assets/tail/tails3.png");
+      currentTailType = "tails3";
+      break;
+    case "tails1":
+      console.log("1 tails is selected")
+      $("#doll-tails").attr("src", "assets/tail/tails1.png");
+      currentTailType = "tails1";
+      break;
+    case "tails9":
+      console.log("9 tails are selected")
+      $("#doll-tails").attr("src", "assets/tail/tails9.png");
+      currentTailType = "tails9";
+      break;
+    default:
+      $("#doll-tails").attr("src", "assets/tail/tails3.png");
+      currentTailType = "tails3";
   }
 }

@@ -403,6 +403,7 @@ let selectedOutfit = {
 };
 
 let isMakeUpShowing = true;
+let currentTailType = "";
 
 /*----------------------------Outfits----------------------------------*/
 
@@ -410,7 +411,7 @@ const outfits = {
   noOutfit: {
     outfitHTML: `
     <img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
-    <img src="assets/tail/tails3.png" class="layer-5 doll-layer">
+    <img src="assets/tail/tails3.png" class="layer-5 doll-layer" id="doll-tails">
     <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
     <img src="assets/hair/long.png" class="layer-6 doll-layer" id="long-hair">
     <img src="assets/under/leaf.png" class="layer1 doll-layer" id="leaf-under">
@@ -427,7 +428,7 @@ const outfits = {
   },
   advisorOutfit: {
     outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
-    <img src="assets/tail/tails3.png" class="layer-5 doll-layer">
+    <img src="assets/tail/tails3.png" class="layer-5 doll-layer" id="doll-tails">
     <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
     <img src="assets/under/leaf.png" class="layer1 doll-layer" id="leaf-under">
     <img src="assets/hair/ponytail.png" class="layer-2 doll-layer" id="ponytail">
@@ -464,7 +465,7 @@ const outfits = {
     outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
     <img src="assets/under/plain.png" class="layer1 doll-layer" id="plain-under">
     <img src="assets/hair/ponytail.png" class="layer-2 doll-layer" id="ponytail">
-    <img src="assets/tail/tails3.png" class="layer-5 doll-layer">
+    <img src="assets/tail/tails3.png" class="layer-5 doll-layer" id="doll-tails">
     <img src="assets/inner/plain_a.png" class="layer5 doll-layer" id="plain-inner">
     <img src="assets/inner/plain_b.png" class="layer-1 doll-layer" id="plain-inner-b">
     <img src="assets/pants/plain.png" class="layer2 doll-layer" id="plain-pants">
@@ -486,7 +487,7 @@ const outfits = {
   },
   secretaryOutfit: {
     outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
-    <img src="assets/tail/tails3.png" class="layer-5 doll-layer">
+    <img src="assets/tail/tails1.png" class="layer-5 doll-layer" id="doll-tails">
     <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
     <img src="assets/under/plain.png" class="layer1 doll-layer" id="plain-under">
     <img src="assets/hair/short-ponytail.png" class="layer-2 doll-layer" id="short-ponytail">
@@ -507,7 +508,7 @@ const outfits = {
   },
   dancerOutfit: {
     outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
-    <img src="assets/tail/tails3.png" class="layer-5 doll-layer">
+    <img src="assets/tail/tails3.png" class="layer-5 doll-layer" id="doll-tails">
     <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
     <img src="assets/hair/long.png" class="layer-6 doll-layer" id="long-hair">
     <img src="assets/under/white-under.png" class="layer1 doll-layer" id="white-under">

@@ -212,14 +212,14 @@ body {
 
 .tail-button {
   width: 32%;
-  background-color: #6e4636;
+  background-color: #5b352b;
   border: none;
   box-shadow: none;
   margin: 0px 5px 5px 0px;
 }
 
 .tail-button:hover {
-  background-color: #5c3628;
+  background-color: #482820;
 }
 
 .tail-button:disabled {
