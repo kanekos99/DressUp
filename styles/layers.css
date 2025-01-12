@@ -54,6 +54,18 @@
   position: absolute;
   z-index: 12;
 }
+.layer13 {
+  position: absolute;
+  z-index: 13;
+}
+.layer14 {
+  position: absolute;
+  z-index: 14;
+}
+.layer15 {
+  position: absolute;
+  z-index: 15;
+}
 .layer-1 {
   position: absolute;
   z-index: -1;

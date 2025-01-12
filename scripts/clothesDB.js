@@ -246,7 +246,7 @@ const clothes = {
         name: "Green Medal Belt",
         category: "ACCESSORIES",
         subcategory: "BELTS",
-        imgHtml: `<img src="assets/belt/green_medal_belt.png" class="layer10 doll-layer" id="green-medal-belt"/>`,
+        imgHtml: `<img src="assets/belt/green_medal_belt.png" class="layer14 doll-layer" id="green-medal-belt"/>`,
         iconHtml: `<img src="assets/belt/icons/green_medal_belt_icon.png" class="item-btn selected-item" onclick="toggleItem(this);" data-item="green-medal-belt" data-category="accessories" data-subcategory="belts">`,
         layer: 8,
         related: [],
@@ -303,7 +303,7 @@ const clothes = {
         name: "Fur Cape",
         category: "ACCESSORIES",
         subcategory: "CAPES",
-        imgHtml: `<img src="assets/cape/fur_cape.png" height="700" class="layer11 doll-layer" id="fur-cape"/>`,
+        imgHtml: `<img src="assets/cape/fur_cape.png" height="700" class="layer12 doll-layer" id="fur-cape"/>`,
         iconHtml: `<img src="assets/cape/icons/fur_cape_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="fur-cape" data-category="accessories" data-subcategory="capes">`,
         layer: 11,
         related: [],
@@ -372,7 +372,7 @@ const clothes = {
         name: "Light Armour",
         category: "ACCESSORIES",
         subcategory: "ARMOUR",
-        imgHtml: `<img src="assets/armour/light.png" class="layer9 doll-layer" id="light-armour"/>`,
+        imgHtml: `<img src="assets/armour/light.png" class="layer13 doll-layer" id="light-armour"/>`,
         iconHtml: `<img src="assets/armour/icons/light_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="light-armour" data-category="accessories" data-subcategory="armour">`,
         layer: 9,
         related: [],
@@ -420,7 +420,7 @@ const clothes = {
         name: "Cinnabar Sword",
         category: "ACCESSORIES",
         subcategory: "WEAPONS",
-        imgHtml: `<img src="assets/weapon/sword.png" class="layer11 doll-layer" id="cinnabar-sword"/>`,
+        imgHtml: `<img src="assets/weapon/sword.png" class="layer15 doll-layer" id="cinnabar-sword"/>`,
         iconHtml: `<img src="assets/weapon/icons/sword_icon.png" class="item-btn" onclick="toggleItem(this);" data-item="cinnabar-sword" data-category="accessories" data-subcategory="weapons">`,
         layer: 8,
         related: [],
@@ -518,13 +518,13 @@ const outfits = {
     <img src="assets/outer/autumn.png" class="layer7 doll-layer" id="autumn-outer">
     <img src="assets/pants/plain.png" class="layer2 doll-layer" id="plain-pants">
     <img src="assets/shoes/advisor_boots.png" class="layer3 doll-layer" id="advisor-boots">
-    <img src="assets/belt/green_medal_belt.png" class="layer10 doll-layer" id="green-medal-belt">
+    <img src="assets/belt/green_medal_belt.png" class="layer14 doll-layer" id="green-medal-belt">
     <img src="assets/cape/fur_cape.png" height="700" class="layer8 doll-layer" id="fur-cape">
     <img src="assets/cape/bottom_cape_a.png" class="layer6 doll-layer" id="bottom-cape">
     <img src="assets/cape/bottom_cape_b.png" class="layer-3 doll-layer" id="bottom-cape-b">
-    <img src="assets/armour/light.png" class="layer9 doll-layer" id="light-armour">
+    <img src="assets/armour/light.png" class="layer13 doll-layer" id="light-armour">
     <img src="assets/neck/collar.png" class="layer4 doll-layer" id="brown-collar">
-    <img src="assets/weapon/sword.png" class="layer11 doll-layer" id="cinnabar-sword">`,
+    <img src="assets/weapon/sword.png" class="layer15 doll-layer" id="cinnabar-sword">`,
     outfitObj: {
       hair: "ponytail",
       under: "plain-under",
