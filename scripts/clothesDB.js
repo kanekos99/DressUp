@@ -116,6 +116,22 @@ const clothes = {
         },
       ],
     },
+    {
+      id: "cheongsam",
+      name: "Cheongsam",
+      category: "INNER",
+      imgHtml: `<img src="assets/inner/cheongsam-a.png" class="layer5 doll-layer" id="cheongsam"/>`,
+      iconHtml: `<img src="assets/inner/icons/cheongsam-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="cheongsam" data-category="inner">`,
+      layer: 5,
+      related: [],
+      dependent: [],
+      linkedItems: [
+        {
+          id: "cheongsam-b",
+          imgHtml: `<img src="assets/inner/cheongsam-b.png" class="layer-1 doll-layer" id="cheongsam-b"/>`,
+        },
+      ],
+    },
   ],
   outer: [
     {
@@ -196,6 +212,16 @@ const clothes = {
       related: [],
       dependent: [],
     },
+    {
+      id: "black-stockings",
+      name: "Black Stockings",
+      category: "PANTS",
+      imgHtml: `<img src="assets/pants/stockings.png" class="layer2 doll-layer" id="black-stockings"/>`,
+      iconHtml: `<img src="assets/pants/icons/stockings-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="black-stockings" data-category="pants">`,
+      layer: 2,
+      related: [],
+      dependent: [],
+    },
   ],
   shoes: [
     {
@@ -235,6 +261,16 @@ const clothes = {
       imgHtml: `<img src="assets/shoes/sandals.png" class="layer2 doll-layer" id="sandals"/>`,
       iconHtml: `<img src="assets/shoes/icons/sandals-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="sandals" data-category="shoes">`,
       layer: 2,
+      related: [],
+      dependent: [],
+    },
+    {
+      id: "red-heels",
+      name: "Red Heels",
+      category: "SHOES",
+      imgHtml: `<img src="assets/shoes/red-heels.png" class="layer3 doll-layer" id="red-heels"/>`,
+      iconHtml: `<img src="assets/shoes/icons/red-heels-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="red-heels" data-category="shoes">`,
+      layer: 3,
       related: [],
       dependent: [],
     },
@@ -331,9 +367,9 @@ const clothes = {
         name: "Chrysanthemum Ribbon",
         category: "ACCESSORIES",
         subcategory: "CAPES",
-        imgHtml: `<img src="assets/cape/chrys-ribbon.png" height="700" class="layer11 doll-layer" id="chrys-ribbon"/>`,
+        imgHtml: `<img src="assets/cape/chrys-ribbon.png" height="700" class="layer13 doll-layer" id="chrys-ribbon"/>`,
         iconHtml: `<img src="assets/cape/icons/chrys-ribbon-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="chrys-ribbon" data-category="accessories" data-subcategory="capes">`,
-        layer: 11,
+        layer: 13,
         related: [],
         dependent: [],
       },
@@ -364,6 +400,23 @@ const clothes = {
         layer: 11,
         related: [],
         dependent: [],
+      },
+      {
+        id: "evening-cape",
+        name: "Evening Cape",
+        category: "ACCESSORIES",
+        subcategory: "CAPES",
+        imgHtml: `<img src="assets/cape/evening-cape-a.png" class="layer12 doll-layer" id="evening-cape"/>`,
+        iconHtml: `<img src="assets/cape/icons/evening-cape-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="evening-cape" data-category="accessories" data-subcategory="capes">`,
+        layer: 12,
+        related: [],
+        dependent: [],
+        linkedItems: [
+          {
+            id: "evening-cape-b",
+            imgHtml: `<img src="assets/cape/evening-cape-b.png" class="layer-4 doll-layer" id="evening-cape-b"/>`,
+          },
+        ],
       },
     ],
     armour: [
@@ -600,7 +653,7 @@ const outfits = {
     <img src="assets/pants/black-shorts.png" class="layer2 doll-layer" id="black-shorts">
     <img src="assets/cape/dancer-cape-a.png" class="layer12 doll-layer" id="dancer-cape">
     <img src="assets/cape/dancer-cape-b.png" class="layer-4 doll-layer" id="dancer-cape-b">
-    <img src="assets/cape/chrys-ribbon.png" height="700" class="layer11 doll-layer" id="chrys-ribbon">
+    <img src="assets/cape/chrys-ribbon.png" height="700" class="layer13 doll-layer" id="chrys-ribbon">
     <img src="assets/belt/dancer-belt.png" class="layer10 doll-layer" id="dancer-belt">
     <img src="assets/neck/collar.png" class="layer4 doll-layer" id="brown-collar">
     <img src="assets/neck/neck-tassel.png" class="layer10 doll-layer" id="neck-tassel">
@@ -646,6 +699,30 @@ const outfits = {
       pants: "",
       shoes: "sandals",
       accessories: ["consort-cape", "straw-hat", "gold-bow-belt"],
+    },
+  },
+  cheongsamOutfit: {
+    outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
+    <img src="assets/tail/tails1.png" class="layer-5 doll-layer" id="doll-tails">
+    <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
+    <img src="assets/under/white-under.png" class="layer1 doll-layer" id="white-under">
+    <img src="assets/hair/short-ponytail.png" class="layer-2 doll-layer" id="short-ponytail">
+    <img src="assets/inner/cheongsam-a.png" class="layer5 doll-layer" id="cheongsam">
+    <img src="assets/inner/cheongsam-b.png" class="layer-1 doll-layer" id="cheongsam-b">
+    <img src="assets/neck/neck-tassel.png" class="layer10 doll-layer" id="neck-tassel">
+    <img src="assets/pants/stockings.png" class="layer2 doll-layer" id="black-stockings">
+    <img src="assets/shoes/red-heels.png" class="layer3 doll-layer" id="red-heels">
+    <img src="assets/head/flower-clip.png" class="layer9 doll-layer" id="flower-clip">
+    <img src="assets/cape/evening-cape-a.png" class="layer12 doll-layer" id="evening-cape">
+    <img src="assets/cape/evening-cape-b.png" class="layer-4 doll-layer" id="evening-cape-b">`,
+    outfitObj: {
+      hair: "short-ponytail",
+      under: "white-under",
+      outer: "",
+      inner: "cheongsam",
+      pants: "black-stockings",
+      shoes: "red-heels",
+      accessories: ["evening-cape", "flower-clip", "neck-tassel"],
     },
   },
 };

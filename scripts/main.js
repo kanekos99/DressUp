@@ -206,7 +206,6 @@ function showMakeUp(checked) {
     isMakeUpShowing = true;
     $("#base-doll").attr("src", "assets/base.png");
   } else {
-    console.log("make up is not showing");
     isMakeUpShowing = false;
     $("#base-doll").attr("src", "assets/base_no_makeup.png");
   }
@@ -260,20 +259,16 @@ function playBGM(checkbox) {
 }
 
 function setTails(selectedTailType) {
-  console.log(selectedTailType)
   switch (selectedTailType) {
     case "tails3":
-      console.log("3 tails are selected")
       $("#doll-tails").attr("src", "assets/tail/tails3.png");
       currentTailType = "tails3";
       break;
     case "tails1":
-      console.log("1 tails is selected")
       $("#doll-tails").attr("src", "assets/tail/tails1.png");
       currentTailType = "tails1";
       break;
     case "tails9":
-      console.log("9 tails are selected")
       $("#doll-tails").attr("src", "assets/tail/tails9.png");
       currentTailType = "tails9";
       break;
