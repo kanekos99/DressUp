@@ -30,6 +30,16 @@ const clothes = {
       related: [],
       dependent: [],
     },
+    {
+      id: "braided-hair",
+      name: "Braided Hair",
+      category: "HAIR",
+      imgHtml: `<img src="assets/hair/braid-cut.png" class="layer15 doll-layer" id="braided-hair"/>`,
+      iconHtml: `<img src="assets/hair/icons/braid-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="braided-hair" data-category="hair">`,
+      layer: 15,
+      related: [],
+      dependent: [],
+    },
   ],
   under: [
     {
@@ -132,6 +142,22 @@ const clothes = {
         },
       ],
     },
+    {
+      id: "festive-robe",
+      name: "Festive Robe",
+      category: "INNER",
+      imgHtml: `<img src="assets/inner/festive-robe-a.png" class="layer5 doll-layer" id="festive-robe"/>`,
+      iconHtml: `<img src="assets/inner/icons/festive-robe-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="festive-robe" data-category="inner">`,
+      layer: 5,
+      related: [],
+      dependent: [],
+      linkedItems: [
+        {
+          id: "festive-robe-b",
+          imgHtml: `<img src="assets/inner/festive-robe-b.png" class="layer-1 doll-layer" id="festive-robe-b"/>`,
+        },
+      ],
+    },
   ],
   outer: [
     {
@@ -193,11 +219,11 @@ const clothes = {
       dependent: [],
     },
     {
-      id: "black-shorts",
-      name: "Black Shorts",
+      id: "martial-pants",
+      name: "Martial Pants",
       category: "PANTS",
-      imgHtml: `<img src="assets/pants/black-shorts.png" class="layer2 doll-layer" id="black-shorts"/>`,
-      iconHtml: `<img src="assets/pants/icons/black-shorts-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="black-shorts" data-category="pants">`,
+      imgHtml: `<img src="assets/pants/martial-pants.png" class="layer2 doll-layer" id="martial-pants"/>`,
+      iconHtml: `<img src="assets/pants/icons/martial-pants-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="martial-pants" data-category="pants">`,
       layer: 2,
       related: [],
       dependent: [],
@@ -209,6 +235,16 @@ const clothes = {
       imgHtml: `<img src="assets/pants/dress-pants.png" class="layer3 doll-layer" id="dress-pants"/>`,
       iconHtml: `<img src="assets/pants/icons/dress-pants-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="dress-pants" data-category="pants">`,
       layer: 3,
+      related: [],
+      dependent: [],
+    },
+    {
+      id: "black-shorts",
+      name: "Black Shorts",
+      category: "PANTS",
+      imgHtml: `<img src="assets/pants/black-shorts.png" class="layer2 doll-layer" id="black-shorts"/>`,
+      iconHtml: `<img src="assets/pants/icons/black-shorts-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="black-shorts" data-category="pants">`,
+      layer: 2,
       related: [],
       dependent: [],
     },
@@ -235,22 +271,12 @@ const clothes = {
       dependent: [],
     },
     {
-      id: "dress-shoes",
-      name: "Dress Shoes",
+      id: "martial-shoes",
+      name: "Martial Shoes",
       category: "SHOES",
-      imgHtml: `<img src="assets/shoes/dress-shoes.png" class="layer2 doll-layer" id="dress-shoes"/>`,
-      iconHtml: `<img src="assets/shoes/icons/dress-shoes-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="dress-shoes" data-category="shoes">`,
-      layer: 2,
-      related: [],
-      dependent: [],
-    },
-    {
-      id: "leg-ribbon",
-      name: "Leg Ribbon",
-      category: "SHOES",
-      imgHtml: `<img src="assets/shoes/leg_ribbon.png" class="layer2 doll-layer" id="leg-ribbon"/>`,
-      iconHtml: `<img src="assets/shoes/icons/leg-ribbon-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="leg-ribbon" data-category="shoes">`,
-      layer: 2,
+      imgHtml: `<img src="assets/shoes/martial-shoes.png" class="layer3 doll-layer" id="martial-shoes"/>`,
+      iconHtml: `<img src="assets/shoes/icons/martial-shoes-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="martial-shoes" data-category="shoes">`,
+      layer: 3,
       related: [],
       dependent: [],
     },
@@ -265,6 +291,26 @@ const clothes = {
       dependent: [],
     },
     {
+      id: "leg-ribbon",
+      name: "Leg Ribbon",
+      category: "SHOES",
+      imgHtml: `<img src="assets/shoes/leg_ribbon.png" class="layer1 doll-layer" id="leg-ribbon"/>`,
+      iconHtml: `<img src="assets/shoes/icons/leg-ribbon-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="leg-ribbon" data-category="shoes">`,
+      layer: 2,
+      related: [],
+      dependent: [],
+    },
+    {
+      id: "dress-shoes",
+      name: "Dress Shoes",
+      category: "SHOES",
+      imgHtml: `<img src="assets/shoes/dress-shoes.png" class="layer2 doll-layer" id="dress-shoes"/>`,
+      iconHtml: `<img src="assets/shoes/icons/dress-shoes-icon.png" class="item-btn" onclick="toggleItem(this);" data-item="dress-shoes" data-category="shoes">`,
+      layer: 2,
+      related: [],
+      dependent: [],
+    },
+    {
       id: "red-heels",
       name: "Red Heels",
       category: "SHOES",
@@ -274,6 +320,7 @@ const clothes = {
       related: [],
       dependent: [],
     },
+
   ],
   accessories: {
     belts: [
@@ -657,7 +704,7 @@ const outfits = {
     <img src="assets/belt/dancer-belt.png" class="layer10 doll-layer" id="dancer-belt">
     <img src="assets/neck/collar.png" class="layer4 doll-layer" id="brown-collar">
     <img src="assets/neck/neck-tassel.png" class="layer10 doll-layer" id="neck-tassel">
-    <img src="assets/shoes/leg_ribbon.png" class="layer2 doll-layer" id="leg-ribbon">
+    <img src="assets/shoes/leg_ribbon.png" class="layer1 doll-layer" id="leg-ribbon">
     <img src="assets/head/flower-clip.png" class="layer9 doll-layer" id="flower-clip">`,
     outfitObj: {
       hair: "long-hair",
@@ -723,6 +770,29 @@ const outfits = {
       pants: "black-stockings",
       shoes: "red-heels",
       accessories: ["evening-cape", "flower-clip", "neck-tassel"],
+    },
+  },
+  festiveOutfit: {
+    outfitHTML: `<img src="assets/base.png" class="layer0 doll-layer" id="base-doll">
+    <img src="assets/tail/tails1.png" class="layer-5 doll-layer" id="doll-tails">
+    <img src="assets/stand.png" width="450" class="doll-stand" id="doll-stand">
+    <img src="assets/under/white-under.png" class="layer1 doll-layer" id="white-under">
+    <img src="assets/neck/neck-tassel.png" class="layer10 doll-layer" id="neck-tassel">
+    <img src="assets/inner/festive-robe-a.png" class="layer5 doll-layer" id="festive-robe">
+    <img src="assets/inner/festive-robe-b.png" class="layer-1 doll-layer" id="festive-robe-b">
+    <img src="assets/cape/evening-cape-a.png" class="layer12 doll-layer" id="evening-cape">
+    <img src="assets/cape/evening-cape-b.png" class="layer-4 doll-layer" id="evening-cape-b">
+    <img src="assets/pants/martial-pants.png" class="layer2 doll-layer" id="martial-pants">
+    <img src="assets/shoes/martial-shoes.png" class="layer3 doll-layer" id="martial-shoes">
+    <img src="assets/hair/braid-cut.png" class="layer15 doll-layer" id="braided-hair">`,
+    outfitObj: {
+      hair: "braided-hair",
+      under: "white-under",
+      outer: "",
+      inner: "festive-robe",
+      pants: "martial-pants",
+      shoes: "martial-shoes",
+      accessories: ["evening-cape", "neck-tassel"],
     },
   },
 };
